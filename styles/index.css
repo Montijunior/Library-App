@@ -1,3 +1,182 @@
 *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+}
+:root{
+    --shadow:0 1px 5px rgba(104, 104, 104, .8);
+    --primary:#f1eded;
+}
+body{
+    background-color: var(--primary);   
+}
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 90px;
+    background-color: white;
+    cursor: pointer;
+    padding: 0 2%;
+}
+.header > .logo{
+    display: flex;
+    align-items: center;
+}
+.logo h1:hover{
+    color:brown;
+}
+.logo h1 {
+    font-size: 3rem;
+    color: #333;
+    font-style: italic;
+    align-self:flex-end;
+}
+.message{
+    display: none;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.button-container{
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.button-container > button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+    padding: 8px 16px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: white;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+dialog{
+    padding: 10px;
+    width: 400px;
+    margin: 100px auto;
+    border: 5px;
+}
+form{
+    width: 100%;
+}
+dialog label, dialog input{
+    display: block;
+}
+label{
+    margin: 5px 0;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+input{
+    width: 95%;
+    padding: 5px 5px;
+    border: 2px solid rgb(176, 174, 174);
+    font-size: 1.2rem;
+    color: #333;
+    font-style: italic;
+    font-weight: 500;
+}
+.sub-Btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    margin-top: 3px;
+}
+dialog button{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: 500;
+    background-color: rgb(246, 196, 196);
+    border: none;
+    border-radius: 5px;
+    padding: 6px 0;
+}
+::backdrop{
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: .5s ease-out;
+}
+.cards-container{
+    margin: 10px 1%;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+}
+
+.card{
+    border-left: 10px solid yellowgreen;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    box-shadow: var(--shadow);
+}
+h3.title{
+    font-size: 1.45rem;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 5px;
+}
+p.author{
+    font-size: 1.35rem;
+    font-weight: 500;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 5px;
+}
+p.pages{
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 5px;
+}
+.checkBtn{
+    width: 100%;
+    display: inline-block;
+}
+.checkBtn input, .checkBtn label{
+    display: inline;
+}
+.deleteBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    font-size: 1.25rem;
+    margin: 5px auto;
+    font-style: italic;
+    color: #333;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+.deleteBtn:hover{
+    background-color: red;
+    color: white;
+}
+.deleteBtn img{
+    margin-right: 4px;
 }
