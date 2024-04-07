@@ -29,7 +29,7 @@ function addToLibrary(){
     myLibrary.push(newBook);
 
     // update display
-    updateDisplay(myLibrary);
+    updateDisplay();
   }
 }
 
@@ -38,17 +38,29 @@ function updateDisplay(){
   //  loop through the myLibrary to find duplicate and insert to the ui
   for (let i = 0; books = myLibrary, i <= myLibrary.length; i++){
     libraryContainer.innerHTML += `
-    <div class="card">
+    <div class="card" id=${i}>
     <h3 class="title">${myLibrary[i].title}</h3>
     <p class="author">${myLibrary[i].author}</p>
     <p class="pages">${myLibrary[i].pages} Pages</p>
-    <button id="read">Read</button>
-    <button class="deleteBtn"><img src="icons/delete.svg" alt="delete svg">Delete</button>
+    <button id="read" onclick="toggleRead(this)">Read</button>
+    <button class="deleteBtn" onclick="deleteBook(this)"><img src="icons/delete.svg" alt="delete svg">Delete</button>
     </div>
     `;
     books.splice(myLibrary[i], 1);
   }
 }
+
+// delete books from the library 
+function deleteBook(button){
+  const bookIndex = myLibrary.findIndex(
+    (book)=> book.id === button.parentElement.id
+  );
+  button.parentElement.remove();
+  myLibrary.splice(bookIndex, 1);
+}
+
+
+
 
 addNewBook.addEventListener("click", ()=>{
   form.reset();
