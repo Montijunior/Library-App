@@ -120,7 +120,7 @@ dialog button{
     margin: 10px 2%;
     display: grid;
     gap: 15px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+    grid-template-columns: repeat(auto-fit, minmax(400px, .6fr));
 }
 
 .card{
